@@ -257,6 +257,9 @@
                                                         <state key="normal" title=".">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="numberButtonPressed:" destination="y9R-2I-ZOf" eventType="touchUpInside" id="Aks-QH-Jey"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atC-oT-cLT">
                                                         <rect key="frame" x="104" y="0.0" width="102.5" height="148.5"/>
@@ -286,9 +289,7 @@
                         <viewLayoutGuide key="safeArea" id="nGW-lL-alS"/>
                     </view>
                     <connections>
-                        <outlet property="calculationButtonPressed" destination="Hl4-La-zrF" id="Q3Q-Wh-4uy"/>
                         <outlet property="displayLabel" destination="ZcG-WG-AWy" id="QjX-XT-2J8"/>
-                        <outlet property="numberButtonPressed" destination="loV-uf-W96" id="TRk-Bb-DCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4WY-LH-NpZ" sceneMemberID="firstResponder"/>
