@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
     
     // MARK: - Properties
-    var isFinishedTypingNumber: Bool = true
+    private var isFinishedTypingNumber: Bool = true
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
