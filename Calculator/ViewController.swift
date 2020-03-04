@@ -13,24 +13,35 @@ class ViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet weak var displayLabel: UILabel!
     
+    // MARK: - Properties
+    var isFinishedTypingNumber: Bool = true
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     // MARK: - IB Actions
     @IBAction func calculationButtonPressed(_ sender: UIButton) {
         
-        // what should happen when the calculation button is pressed
+        isFinishedTypingNumber = true
+        
     }
     
     @IBAction func numberButtonPressed(_ sender: UIButton) {
         
-        // what should happen whent the number is pressed
-        
-        print(sender.currentTitle!)
+        if let numberValue = sender.currentTitle {
+            
+            if isFinishedTypingNumber {
+                displayLabel.text = numberValue
+                isFinishedTypingNumber = false
+            } else {
+                displayLabel.text = displayLabel.text! + numberValue
+            }
+            
+            
+        }
     }
-    
-
 }
 
