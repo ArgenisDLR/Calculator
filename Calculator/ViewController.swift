@@ -31,6 +31,16 @@ class ViewController: UIViewController {
             fatalError("Cannot convert display label text to a Double")
         }
         
+        if let calculationMethod = sender.currentTitle {
+            if calculationMethod == "+/-" {
+                displayLabel.text = String(number * -1)
+            } else if calculationMethod == "AC" {
+                displayLabel.text = "0"
+            } else if calculationMethod == "%" {
+                displayLabel.text = String(number * 0.01)
+            }
+        }
+        
         
         
     }
