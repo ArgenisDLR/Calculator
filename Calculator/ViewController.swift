@@ -16,6 +16,15 @@ class ViewController: UIViewController {
     // MARK: - Properties
     private var isFinishedTypingNumber: Bool = true
     
+    private var displayValue: Double {
+        get {
+            guard let number = Double(displayLabel.text!) else {
+                fatalError("Cannot convert display label text to a Double")
+            }
+            return number
+        }
+    }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +36,13 @@ class ViewController: UIViewController {
         
         isFinishedTypingNumber = true
         
-        guard let number = Double(displayLabel.text!) else {
-            fatalError("Cannot convert display label text to a Double")
-        }
-        
         if let calculationMethod = sender.currentTitle {
             if calculationMethod == "+/-" {
-                displayLabel.text = String(number * -1)
+                displayLabel.text = String(displayLabel * -1)
             } else if calculationMethod == "AC" {
                 displayLabel.text = "0"
             } else if calculationMethod == "%" {
-                displayLabel.text = String(number * 0.01)
+                displayLabel.text = String(displayLabel * 0.01)
             }
         }
         
@@ -53,10 +58,22 @@ class ViewController: UIViewController {
                 displayLabel.text = numberValue
                 isFinishedTypingNumber = false
             } else {
+                
+                if numberValue == "." {
+                    
+                    guard let currentDisplayLabelValue = Double(displayLabel.text!) else {
+                        fatalError("Cannon convert display label text to a Double!")
+                    }
+                    
+                    let isInteger = floor(currentDisplayLabelValue) == currentDisplayLabelValue
+                    
+                    if !isInteger {
+                        return
+                    }
+                }
+                
                 displayLabel.text = displayLabel.text! + numberValue
             }
-            
-            
         }
     }
 }
