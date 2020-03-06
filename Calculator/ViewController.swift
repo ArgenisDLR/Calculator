@@ -23,6 +23,9 @@ class ViewController: UIViewController {
             }
             return number
         }
+        set {
+            displayLabel.text = String(newValue)
+        }
     }
     
     // MARK: - Lifecycle
@@ -38,11 +41,11 @@ class ViewController: UIViewController {
         
         if let calculationMethod = sender.currentTitle {
             if calculationMethod == "+/-" {
-                displayLabel.text = String(displayLabel * -1)
+                displayValue *= -1
             } else if calculationMethod == "AC" {
                 displayLabel.text = "0"
             } else if calculationMethod == "%" {
-                displayLabel.text = String(displayLabel * 0.01)
+                displayValue *= 0.01
             }
         }
         
