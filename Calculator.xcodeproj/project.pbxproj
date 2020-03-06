@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D4BCB382412095700493E7A /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4BCB372412095700493E7A /* CalculatorLogic.swift */; };
 		4D855D6A240F30FF009E8503 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D855D69240F30FF009E8503 /* AppDelegate.swift */; };
 		4D855D6C240F30FF009E8503 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D855D6B240F30FF009E8503 /* SceneDelegate.swift */; };
 		4D855D6E240F30FF009E8503 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D855D6D240F30FF009E8503 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D4BCB372412095700493E7A /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 		4D855D66240F30FF009E8503 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D855D69240F30FF009E8503 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D855D6B240F30FF009E8503 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				4D855D6B240F30FF009E8503 /* SceneDelegate.swift */,
 				4D855D6D240F30FF009E8503 /* ViewController.swift */,
 				4D855D6F240F30FF009E8503 /* Main.storyboard */,
+				4D4BCB372412095700493E7A /* CalculatorLogic.swift */,
 				4D855D72240F3103009E8503 /* Assets.xcassets */,
 				4D855D74240F3103009E8503 /* LaunchScreen.storyboard */,
 				4D855D77240F3103009E8503 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4BCB382412095700493E7A /* CalculatorLogic.swift in Sources */,
 				4D855D6E240F30FF009E8503 /* ViewController.swift in Sources */,
 				4D855D6A240F30FF009E8503 /* AppDelegate.swift in Sources */,
 				4D855D6C240F30FF009E8503 /* SceneDelegate.swift in Sources */,
