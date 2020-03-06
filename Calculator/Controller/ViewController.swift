@@ -41,6 +41,13 @@ class ViewController: UIViewController {
         
         if let calculationMethod = sender.currentTitle {
             
+            let calculator = CalculatorLogic(number: displayValue)
+            
+            guard let result = calculator.calculate(symbol: calculationMethod) else {
+                fatalError("The result of the calculation is nil")
+            }
+            displayValue = result
+            
         }
             
             

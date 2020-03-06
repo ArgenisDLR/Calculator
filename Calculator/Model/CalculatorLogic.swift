@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalculatorLogic {
+struct CalculatorLogic {
     
     var number: Double
     
@@ -16,7 +16,7 @@ class CalculatorLogic {
         self.number = number
     }
     
-    func calculate(symbol: String) -> Double {
+    func calculate(symbol: String) -> Double? {
         
         if symbol == "+/-" {
             return number * -1
@@ -25,6 +25,8 @@ class CalculatorLogic {
         } else if symbol == "%" {
             return number * 0.01
         }
+        
+        return nil
         
     }
     
