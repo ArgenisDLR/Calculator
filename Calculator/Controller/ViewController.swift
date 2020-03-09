@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     // MARK: - Properties
     private var isFinishedTypingNumber: Bool = true
     
+    private var calculator = CalculatorLogic()
+    
     private var displayValue: Double {
         get {
             guard let number = Double(displayLabel.text!) else {
@@ -41,44 +43,42 @@ class ViewController: UIViewController {
         
         if let calculationMethod = sender.currentTitle {
             
-            let calculator = CalculatorLogic(number: displayValue)
-            
             guard let result = calculator.calculate(symbol: calculationMethod) else {
                 fatalError("The result of the calculation is nil")
             }
             displayValue = result
             
         }
-            
-            
-            
-        }
         
-        @IBAction func numberButtonPressed(_ sender: UIButton) {
+        
+        
+    }
+    
+    @IBAction func numberButtonPressed(_ sender: UIButton) {
+        
+        if let numberValue = sender.currentTitle {
             
-            if let numberValue = sender.currentTitle {
+            if isFinishedTypingNumber {
+                displayLabel.text = numberValue
+                isFinishedTypingNumber = false
+            } else {
                 
-                if isFinishedTypingNumber {
-                    displayLabel.text = numberValue
-                    isFinishedTypingNumber = false
-                } else {
+                if numberValue == "." {
                     
-                    if numberValue == "." {
-                        
-                        guard let currentDisplayLabelValue = Double(displayLabel.text!) else {
-                            fatalError("Cannon convert display label text to a Double!")
-                        }
-                        
-                        let isInteger = floor(currentDisplayLabelValue) == currentDisplayLabelValue
-                        
-                        if !isInteger {
-                            return
-                        }
+                    guard let currentDisplayLabelValue = Double(displayLabel.text!) else {
+                        fatalError("Cannon convert display label text to a Double!")
                     }
                     
-                    displayLabel.text = displayLabel.text! + numberValue
+                    let isInteger = floor(currentDisplayLabelValue) == currentDisplayLabelValue
+                    
+                    if !isInteger {
+                        return
+                    }
                 }
+                
+                displayLabel.text = displayLabel.text! + numberValue
             }
         }
+    }
 }
 

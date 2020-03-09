@@ -10,9 +10,9 @@ import UIKit
 
 struct CalculatorLogic {
     
-    var number: Double
+    private var number: Double?
     
-    init(number: Double) {
+    mutating func setNumber(_ number: Double) {
         self.number = number
     }
     
