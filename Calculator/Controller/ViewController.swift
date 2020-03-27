@@ -45,10 +45,6 @@ class ViewController: UIViewController {
         
         if let calculationMethod = sender.currentTitle {
             
-            guard let result = calculator.calculate(symbol: calculationMethod) else {
-                fatalError("The result of the calculation is nil")
-            }
-            
             displayValue = result
             
         }
@@ -66,10 +62,6 @@ class ViewController: UIViewController {
                 
                 if numberValue == "." {
                     
-                    guard let currentDisplayLabelValue = Double(displayLabel.text!) else {
-                        fatalError("Cannon convert display label text to a Double!")
-                    }
-                    
                     let isInteger = floor(currentDisplayLabelValue) == currentDisplayLabelValue
                     
                     if !isInteger {
@@ -82,4 +74,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
